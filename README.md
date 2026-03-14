@@ -1,9 +1,9 @@
 # minitalk
 
 A small UNIX signal-based communication program developed as part of the 42 curriculum.
-This project consists of building a client-server pair that exchanges data using only `SIGUSR1` and `SIGUSR2`, with the server reconstructing and printing the transmitted message.
+`minitalk` is a small client-server project that sends data between two processes using only `SIGUSR1` and `SIGUSR2`.
 
-`minitalk` was designed to strengthen core C skills around inter-process communication, signal handling, bitwise operations, and message reconstruction at a low level.
+It was a good way to build solid foundations in inter-process communication, signal handling, bitwise operations and message reconstruction in C.
 
 ## Features
 - Communication between two processes using UNIX signals
@@ -20,7 +20,7 @@ This project consists of building a client-server pair that exchanges data using
 - `Makefile` — builds the `client` and `server` executables
 
 ## Mandatory part
-The mandatory part implements a simple communication system between a client and a server.
+The mandatory part focuses on the communication flow between the client and the server.
 
 ### Programs
 - `server` — starts first, prints its PID, then waits for incoming signals
@@ -34,12 +34,8 @@ The mandatory part implements a simple communication system between a client and
 
 ### Main components
 - `client.c` — encodes each character into bits and sends them through signals
-- `server.c` — receives signals, rebuilds characters, and prints them
+- `server.c` — receives signals, rebuilds characters and prints them
 - `utils.c` — provides local utility helpers such as conversions
-
-## Bonus part
-The 42 subject bonus includes message acknowledgment and Unicode support.
-This repository mainly reflects the core client-server communication approach built for the project.
 
 ## Build
 Build the project:
@@ -66,14 +62,6 @@ Rebuild everything:
 make re
 ```
 
-## Output
-The project builds two executables:
-
-```bash
-client
-server
-```
-
 ## Usage
 Start the server first:
 
@@ -88,7 +76,7 @@ Then run the client with the server PID and a message:
 ```
 
 ## Learning outcomes
-This project was an introduction to signal-based inter-process communication in C.
+This project was my first real introduction to signal-based inter-process communication in C.
 It helped build solid foundations in:
 - UNIX signal handling
 - client-server communication patterns
